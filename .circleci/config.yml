@@ -1,0 +1,17 @@
+version: 2.1
+
+jobs:
+  update-packages:
+    docker:
+      - image: alpine
+    steps:
+      - run: echo "updating packages"
+
+# Workflows
+workflows:
+  master:
+    jobs:
+      - update-packages:
+          filters:
+            branches:
+              only: master
