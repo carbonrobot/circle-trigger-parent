@@ -11,7 +11,7 @@ jobs:
             -H 'Content-Type: application/json' \
             -H 'Accept: application/json' \
             -H "Circle-Token: $CIRCLECI_TOKEN" \
-            -d '{ "branch": "master", "parameters": { "remote_trigger": "update-packages" } }'
+            -d '{ "branch": "master", "parameters": { "remote_trigger": "update-packages", "version": "8.10.0" } }'
         
 # Workflows
 workflows:
