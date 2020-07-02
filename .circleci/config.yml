@@ -5,7 +5,13 @@ jobs:
     docker:
       - image: alpine
     steps:
-      - run: echo "updating packages"
+      - run: |
+          curl -X POST https://circleci.com/api/v2/project/github/carbonrobot/circleci-trigger-child/pipeline \
+            -H 'Content-Type: application/json' \
+            -H 'Accept: application/json' \
+            -H "Circle-Token: $CIRCLECI_TOKEN" \
+            -d '{ "branch": "master", "parameters": { "remote_trigger": "update-packages" } }'
+        
 
 # Workflows
 workflows:
