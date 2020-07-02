@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   update-packages:
     docker:
-      - image: alpine
+      - image: circleci/node
     steps:
       - run: |
           curl -X POST https://circleci.com/api/v2/project/github/carbonrobot/circleci-trigger-child/pipeline \
