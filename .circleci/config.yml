@@ -12,7 +12,6 @@ jobs:
             -H "Circle-Token: $CIRCLECI_TOKEN" \
             -d '{ "branch": "master", "parameters": { "remote_trigger": "update-packages" } }'
         
-
 # Workflows
 workflows:
   master:
