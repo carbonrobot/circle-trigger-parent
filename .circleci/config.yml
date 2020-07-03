@@ -7,11 +7,11 @@ jobs:
       - image: circleci/node
     steps:
       - run: |
-          curl -X POST https://circleci.com/api/v2/project/github/carbonrobot/circle-trigger-child/pipeline \
+          curl -X POST https://circleci.com/api/v2/project/github/rbilabs/ctg-connector-service/pipeline \
             -H 'Content-Type: application/json' \
             -H 'Accept: application/json' \
             -H "Circle-Token: $CIRCLECI_TOKEN" \
-            -d '{ "branch": "master", "parameters": { "remote_trigger": "update-packages" } }'
+            -d '{ "branch": "master", "parameters": { "trigger": "update-packages", "version": "latest" } }'
         
 # Workflows
 workflows:
